@@ -1,9 +1,7 @@
 console.log("Bem Vindo ao BytBank \n\n\n");
 
-class Cliente {
-    nome;
-    cpf;   
-}
+import {Cliente} from "./Cliente.js";
+import {ContaCorrente} from "./ContaCorrente.js";
 
 
 
@@ -15,19 +13,6 @@ cliente1.cpf  = 12345678900;
 const cliente2 = new Cliente();
 cliente2.nome = "Ana";
 cliente2.cpf = 98765432100;
-
-
-class ContaCorrente {
-    agencia;
-    saldo;
-
-    sacar(valor){
-        if(this.saldo >= valor){
-            this.saldo -= valor
-        }
-    }
-
-}
 
 const contaCorrentePedro = new ContaCorrente ();
 contaCorrentePedro.saldo = 0;
