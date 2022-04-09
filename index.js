@@ -15,7 +15,7 @@ cliente2.nome = "Ana";
 cliente2.cpf = 98765432100;
 
 const contaCorrentePedro = new ContaCorrente ();
-contaCorrentePedro.saldo = 0;
+contaCorrentePedro._saldo = 0;
 contaCorrentePedro.agencia = 1001;
 
 
@@ -39,12 +39,15 @@ contaCorrentePedro.agencia = 1001;
 //     };
 // Agora vamos costumizar e colocar em uma função    
 
-console.log(contaCorrentePedro.saldo);
-contaCorrentePedro.saldo = 100; 
-console.log(contaCorrentePedro.saldo); 
+console.log(contaCorrentePedro._saldo);
+contaCorrentePedro._saldo = 100; 
+console.log(contaCorrentePedro._saldo); 
 contaCorrentePedro.sacar(200);
 
-console.log(contaCorrentePedro.saldo);
+const valorSacado =  contaCorrentePedro.sacar;
+
+console.log(contaCorrentePedro._saldo);
+console.log(valorSacado);
 
 
 console.log(cliente1);
