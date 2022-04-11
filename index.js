@@ -1,54 +1,30 @@
-console.log("Bem Vindo ao BytBank \n\n\n");
+console.log("Bem vindo Ao BytBank \n\n");
 
 import {Cliente} from "./Cliente.js";
 import {ContaCorrente} from "./ContaCorrente.js";
 
-
-
 const cliente1 = new Cliente();
-cliente1.nome = "Pedro";
-cliente1.cpf  = 12345678900;
+cliente1.nome = "Ricardo";
+cliente1.cpf  = 11122243456;
 
 
 const cliente2 = new Cliente();
-cliente2.nome = "Ana";
-cliente2.cpf = 98765432100;
+cliente2.nome = "Alice";
+cliente2.cpf  = 990088776612;
 
-const contaCorrentePedro = new ContaCorrente ();
-contaCorrentePedro._saldo = 0;
-contaCorrentePedro.agencia = 1001;
-
-
-
-// TEMOS UMA OPERAÇÃO QUE NÃO ESTÁ PROTEGENDO A REGRA DE NEGOCIO DO BANCO
-// console.log(contaCorrentePedro.saldo);
-// contaCorrentePedro.saldo = 100;
-// console.log(contaCorrentePedro.saldo);
-// let valorSacado = 200;
-// contaCorrentePedro.saldo -= valorSacado; 
-
-// console.log(contaCorrentePedro.saldo);
-
-// VAMOS USAR A MESMA ESTRUTURA, POREM MODIFICANDO E ACRESCENTANDO UMA VERIFICAÇÃO 
-// console.log(contaCorrentePedro.saldo);
-// contaCorrentePedro.saldo = 100;
-// console.log(contaCorrentePedro.saldo);
-// let valorSacado = 200;
-// if (contaCorrentePedro.saldo >= valorSacado){
-//     contaCorrentePedro.saldo -= valor;
-//     };
-// Agora vamos costumizar e colocar em uma função    
-
-console.log(contaCorrentePedro._saldo);
-contaCorrentePedro._saldo = 100; 
-console.log(contaCorrentePedro._saldo); 
-contaCorrentePedro.sacar(200);
-
-const valorSacado =  contaCorrentePedro.sacar;
-
-console.log(contaCorrentePedro._saldo);
-console.log(valorSacado);
+const contaCorrenteRicardo = new ContaCorrente();
+contaCorrenteRicardo.agencia = 1001; 
+contaCorrenteRicardo.cliente = cliente1;
+contaCorrenteRicardo.depositar(500);
 
 
-console.log(cliente1);
-console.log(cliente2);
+const conta2 = new ContaCorrente();
+conta2.agencia = 102;
+conta2.cliente = cliente2;
+
+
+
+contaCorrenteRicardo.transferir(200, conta2);
+
+console.log(conta2);
+console.log(contaCorrenteRicardo);
